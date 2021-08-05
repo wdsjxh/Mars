@@ -8,7 +8,7 @@ Fork自[TideSec/Mars](https://github.com/TideSec/Mars)
 # 启动说明
 1. <font color=#FF000>docker方式部署安装AWVS14，可参考：[AWVS14破解版本docker一键安装](https://www.digter8.com/439.html)</font>
 2. <font color=#FF000>docker运行AWVS14，生成AWVS key</font>
-3. <font color=#FF000>拉取mars镜像，进入对应容器，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后启动Mars就行了</font>
+3. <font color=#FF000>拉取mars镜像 ```docker pull kalagin/mars:latest```，进入对应容器，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后启动Mars就行了</font>
 
 <div align=center><img src=images/logo.png width=30% ></div>
 
