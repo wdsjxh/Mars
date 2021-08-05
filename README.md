@@ -1,3 +1,15 @@
+Fork自[TideSec/Mars](https://github.com/TideSec/Mars)
+# 改动情况
+
+1. <font color=#FF000>针对AWVS 许可证过期问题，单独部署AWVS docker</font>
+2. <font color=#FF000>注释掉start.sh中启动本地容器中AWVS脚本</font>
+3. <font color=#FF000>后续对接AWVS，直接在容器中配置文件Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数</font>
+
+# 启动说明
+1. <font color=#FF000>docker方式部署安装AWVS14，可参考：[AWVS14破解版本docker一键安装](https://www.digter8.com/439.html)</font>
+2. <font color=#FF000>docker运行AWVS14，生成AWVS key</font>
+3. <font color=#FF000>拉取mars镜像，进入对应容器，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后启动Mars就行了</font>
+
 <div align=center><img src=images/logo.png width=30% ></div>
 
 # Mars
@@ -30,7 +42,7 @@ Mars(战神),对之前的[WDScanner](https://github.com/TideSec/WDScanner)的全
 - [2019-03-18] 资产探测完成
 - [2019-02-22] 完成部分核心功能
 - [2019-01-15] 规划整体架构
- 
+
 **tips：** 2020年5月11日，代码略有更新，主要修复几个bug，可在docker中的中进行代码更新。
 ```
 cd /root/Mars && git pull
@@ -239,4 +251,3 @@ Tide安全团队自建立之初持续向CNCERT、CNVD、漏洞盒子、补天、
 对安全感兴趣的小伙伴可以关注Tide安全团队Wiki：[http://paper.TideSec.com](http://paper.TideSec.com) 或团队公众号。
 
 <div align=center><img src=images/ewm.png width=30% ></div> 
-
