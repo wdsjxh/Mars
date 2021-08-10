@@ -4,11 +4,21 @@ Fork自[TideSec/Mars](https://github.com/TideSec/Mars)
 1. <font color=#FF000>针对AWVS 许可证过期问题，单独部署AWVS docker</font>
 2. <font color=#FF000>注释掉start.sh中启动本地容器中AWVS脚本</font>
 3. <font color=#FF000>后续对接AWVS，直接在容器中配置文件Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数</font>
+4. <font color=#FF000>添加docker容器中文包，支持UTF-8字符集，解决中文任务名导致扫描终止问题，这个临时解决</font>
+5. <font color=#FF000>更新hydra为9.2版本，安装freerdp，支持hydra扫描rdp，这里扫描可能有bug</font>
 
 # 启动说明
 1. <font color=#FF000>docker方式部署安装AWVS14，可参考：[AWVS14破解版本docker一键安装](https://www.digter8.com/439.html)</font>
 2. <font color=#FF000>docker运行AWVS14，生成AWVS key</font>
 3. <font color=#FF000>拉取mars镜像 ```docker pull kalagin/mars:latest```，进入对应容器，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后启动Mars就行了</font>
+
+
+
+<font color=#FF000>原版docker镜像有bug，不支持中文字符集，导致运行扫描时报错，mars.py中文报错临时解决方案参考 [docker 运行Python报错：UnicodeEncodeError: 'ascii' codec can't encode characters](https://blog.csdn.net/ningyingqi/article/details/81557944)</font>
+
+------------------------------------------------------------------------------分割线，以下原文-----------------------------------------------------------------------------------------------------------------
+
+
 
 <div align=center><img src=images/logo.png width=30% ></div>
 
