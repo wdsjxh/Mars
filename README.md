@@ -14,7 +14,7 @@ Fork自[TideSec/Mars](https://github.com/TideSec/Mars)
 
 
 
-<font color=#FF000>原版docker镜像有bug，不支持中文字符集，导致运行扫描时报错，mars.py中文报错临时解决方案参考 [docker 运行Python报错：UnicodeEncodeError: 'ascii' codec can't encode characters](https://blog.csdn.net/ningyingqi/article/details/81557944)</font>
+<font color=#FF000>原版docker镜像有bug，不支持中文字符集，导致运行扫描时报错，我这里没有原版的dockerfile文件，不好统一修复，临时解决方案：mars.py中文报错参考 [docker 运行Python报错：UnicodeEncodeError: 'ascii' codec can't encode characters](https://blog.csdn.net/ningyingqi/article/details/81557944)</font>
 
 以下为原文
 
