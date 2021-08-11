@@ -10,9 +10,9 @@ Fork自[TideSec/Mars](https://github.com/TideSec/Mars)
 # 启动说明
 1. <font color=#FF000>docker方式部署安装AWVS14，可参考：[AWVS14破解版本docker一键安装](https://www.digter8.com/439.html)</font>
 2. <font color=#FF000>docker运行AWVS14，生成AWVS key</font>
-3. <font color=#FF000>拉取mars镜像 ```docker pull kalagin/mars:latest```，进入对应容器，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后启动Mars就行了</font>
-
-
+3. <font color=#FF000>拉取mars镜像 ```docker pull kalagin/mars:latest```</font>
+4. <font color=#FF000>运行，注意这里添加了env参数： ```docker run  --env  LANG=zh_CN.UTF-8 --name tide-mars  -p 5000:5000 -p 27017:27017  -p 13443:13443 -h tide-mars -d kalagin/mars  /usr/sbin/sshd -D```</font>
+5. <font color=#FF000>进入对应容器，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后restart  Mars就行了</font>
 
 <font color=#FF000>原版docker镜像有bug，不支持中文字符集，导致运行扫描时报错，我这里没有原版的dockerfile文件，不好统一修复，临时解决方案：mars.py中文报错参考 [docker 运行Python报错：UnicodeEncodeError: 'ascii' codec can't encode characters](https://blog.csdn.net/ningyingqi/article/details/81557944)</font>
 
