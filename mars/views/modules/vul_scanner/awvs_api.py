@@ -25,6 +25,8 @@ class AcunetixScanner:
         self.api_key = app.config.get('AWVS_API_KEY')
         self.scanner_url = app.config.get('AWVS_URL')
         self.awvs_report_path = app.config.get('AWVS_REPORT_PATH')
+        if not os.path.exists(self.awvs_report_path):
+            os.mkdir(self.awvs_report_path)
         self.scan_result = {}
         self.all_tasks = []
         self.report_url = []
@@ -102,8 +104,8 @@ class AcunetixScanner:
             else:
                 return False
         except Exception as e:
-                print(scan_id, e)
-                return False
+            print(scan_id, e)
+            return False
 
     def delete_target(self, target_id):
         try:
@@ -114,8 +116,8 @@ class AcunetixScanner:
             else:
                 return False
         except Exception as e:
-                print(target_id, e)
-                return False
+            print(target_id, e)
+            return False
 
     def reports(self, id_list, list_type, task_name):
         # list_type = "scans", 'targets' ...
@@ -136,7 +138,8 @@ class AcunetixScanner:
                     if json.loads(res_down.content)['status'] == "completed":
                         for report_url in json.loads(res_down.content)['download']:
                             report_res = requests.get(self.scanner_url + report_url, timeout=30, verify=False)
-                            report_name = time.strftime("%y%m%d", time.localtime()) + "_" + task_name[0] + '.' + report_url.split('.')[-1]
+                            report_name = time.strftime("%y%m%d", time.localtime()) + "_" + task_name[0] + '.' + \
+                                          report_url.split('.')[-1]
                             if os.path.exists(self.awvs_report_path + report_name):
                                 os.remove(self.awvs_report_path + report_name)
                             with open(self.awvs_report_path + report_name, "wb") as report_content:
@@ -146,5 +149,5 @@ class AcunetixScanner:
             else:
                 return False
         except Exception as e:
-                print(id_list, e)
-                return False
+            print(id_list, e)
+            return False
