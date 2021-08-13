@@ -15,8 +15,8 @@ class Config:
 
     WEB_USER = 'admin'  # Web Auth User
     WEB_PASSWORD = 'tidesec'  # Web Auth Password
-    POCSUITE_PATH = basedir + '/../Mars/views/modules/scanner/pocsuite_plugin/'
-    AWVS_REPORT_PATH = basedir + '/../Mars/static/download/'  # static file download
+    POCSUITE_PATH = basedir + '/../mars/views/modules/scanner/pocsuite_plugin/'
+    AWVS_REPORT_PATH = basedir + '/../mars/static/download/'  # static file download
     WEB_HOST = '0.0.0.0'  # Web Server Host
     WEB_PORT = 5000  # Web Server Port
     UPDATE_URL = "https://mars.tidesec.net/update"  # check update
