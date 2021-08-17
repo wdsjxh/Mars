@@ -15,7 +15,7 @@ Fork自[TideSec/Mars](https://github.com/TideSec/Mars)
 4. <font color=#FF000>运行，注意这里添加了env参数： ```docker run  --env  LANG=zh_CN.UTF-8 --name tide-mars  -p 5000:5000 -p 27017:27017  -p 13443:13443 -h tide-mars -d kalagin/mars  /usr/sbin/sshd -D```</font>
 5. <font color=#FF000>进入对应容器```sudo docker exec -it tide-mars bash```，在/root/Mars/instance/config.py处修改awvs_url:AWVS_URL参数和api的key:AWVS_API_KEY参数，然后restart  Mars，```sudo docker restart tide-mars```</font>
 6. <font color=#FF000>启动Mars平台```sudo docker exec tide-mars  /bin/bash -c '/bin/bash /root/Mars/start.sh'```</font>
-7. <font color=#FF000>进入容器，重启mars.py文件，```ps -aux```，记住mars.py对应pid，kill掉，```kill -9 pid```，**手动启动mars.py : ```cd /root/Mars/ && python mars.py``` 我这边测试不手动重启，扫描会一直processing  **</font>
+7. **<font color=#FF000>进入容器，重启mars.py文件，```ps -aux```，记住mars.py对应pid，kill掉，```kill -9 pid```，手动启动mars.py ， ```cd /root/Mars/ && python mars.py``` 我这边测试不手动重启，扫描会一直processing</font>**
 
 <font color=#FF000>备注：原版docker镜像有bug，不支持中文字符集，导致运行扫描时报错，通过第4步指定env参数方式未完全解决中文字符集问题，需要搭配其他的临时解决方案：mars.py中文报错参考 [docker 运行Python报错：UnicodeEncodeError: 'ascii' codec can't encode characters](https://blog.csdn.net/ningyingqi/article/details/81557944)</font>
 
